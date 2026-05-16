@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website | About</title>
+    <!-- We keep the style embedded so it remains self-contained for easy copy-pasting -->
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; background-color: #f4f6f9; }
+        header { background-color: #2c3e50; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { margin: 0; font-size: 1.5rem; }
+        nav a { color: #fff; text-decoration: none; margin-left: 15px; }
+        nav a:hover, nav a.active { color: #1abc9c; text-decoration: underline; }
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem; }
+        footer { background-color: #2c3e50; color: #fff; text-align: center; padding: 1rem; margin-top: 4rem; }
+        
+        /* Layout for About Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 2rem;
+        }
+        .about-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            .about-section { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My GitHub Project</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>About Our Story</h2>
+        <div class="about-section">
+            <!-- Placeholder Image: Replace src with "images/team.jpg" later -->
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Our Team Workspace" class="about-img">
+            
+            <div>
+                <h3>Who We Are</h3>
+                <p>We are a forward-thinking group of creators dedicated to building accessible web experiences. This template serves as a powerful foundation for open-source project documentation, small business sites, or educational portfolios.</p>
+                <p>Our goal is to demonstrate how clean architecture and simple styling can produce stunning outcomes without the unnecessary overhead of heavy web frameworks.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 My GitHub Pages Website. Built with Passion.</p>
+    </footer>
+
+</body>
+</html>
