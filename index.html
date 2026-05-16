@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website | Home</title>
+    <title>Dr. Le Pham's Personal Page</title>
+    <!-- Font Awesome Link for Professional Icons (Newspapers, Links, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         /* Shared Global Styles */
         body {
@@ -33,45 +36,173 @@
             color: #1abc9c;
             text-decoration: underline;
         }
-        .container {
-            max-width: 1000px;
+        
+        /* Master Layout Container Splits Page into 2 Columns */
+        .main-layout-container {
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1.5rem;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
         }
-        .hero-img {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
+
+        /* LEFT COLUMN: Sticky Profile and Contact Panel */
+        .left-contact-panel {
+            flex: 0 0 300px;
+            background-color: #fff;
+            padding: 2rem 1.5rem;
             border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-        .personal-hero-img {
-            width: 250px;         /* Sets a professional size for a personal photo */
-            height: auto;
-            border-radius: 8px;   /* Gives clean, slightly rounded corners */
-            object-fit: cover;
-            flex-shrink: 0;       /* Prevents the image from shrinking on smaller screens */
-        }
-        footer {
-            background-color: #2c3e50;
-            color: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             text-align: center;
-            padding: 1rem;
-            margin-top: 4rem;
+            position: sticky;
+            top: 20px;
+            box-sizing: border-box;
+        }
+        .panel-profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #2c3e50;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .left-contact-panel h3 {
+            margin: 10px 0 5px 0;
+            color: #2c3e50;
+            font-size: 1.4rem;
+        }
+        .panel-title {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 5px 0 0 0;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .panel-sub-title {
+            font-size: 0.85rem;
+            color: #777;
+            margin: 3px 0 0 0;
+        }
+        .panel-divider {
+            border: 0;
+            height: 1px;
+            background: #eaeaea;
+            margin: 1.5rem 0;
+        }
+        .contact-links {
+            text-align: left;
             font-size: 0.9rem;
         }
-        /* Page Specific Styles */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 2rem;
+        .contact-links p {
+            margin: 12px 0;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .card {
+        .contact-links i {
+            color: #2c3e50;
+            width: 16px;
+        }
+        .contact-links a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* RIGHT COLUMN: Primary Information Section */
+        .right-content-area {
+            flex: 1;
+        }
+        .right-content-area h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 0.5rem;
+        }
+        .right-content-area h3 {
+            color: #2c3e50;
+            margin-top: 2.5rem;
+        }
+
+        /* Timeline and Milestones list styling */
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .feature-content {
             background: #fff;
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .feature-content h4 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        .feature-content p {
+            margin: 0 0 10px 0;
+            color: #555;
+        }
+        .feature-image {
+            display: block;
+            height: auto;
+            margin: 15px 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        /* Custom Action Buttons for links */
+        .news-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+        .news-link-btn:hover {
+            background-color: #003d82;
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Breakpoints for Mobile Viewers */
+        @media (max-width: 900px) {
+            .main-layout-container {
+                flex-direction: column;
+            }
+            .left-contact-panel {
+                flex: 1 1 100%;
+                width: 100%;
+                position: relative;
+                top: 0;
+            }
+            .feature-image {
+                max-width: 100% !important; /* Forces images full-screen on tightly packed mobile rows */
+            }
         }
     </style>
 </head>
@@ -82,50 +213,76 @@
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
-            
         </nav>
     </header>
 
-    <div class="container">
-       
-
-        <h2>Welcome to My Page</h2>
-        <p>This is the website of Dr. Le Nam Hai Pham. </p>
-
-        <h2>About Le Nam Hai Pham</h2>
-        <p> Le Nam Hai Pham received the bachelor’s degree in electrical engineering from the Univer sity of Technology, Ho Chi Minh City, Vietnam (Dai Hoc Bach Khoa HCM), 
-            and the M.Sc. and Ph.D degree in electrical power engineering from the University of South-Eastern Norway, in 2022 and 2025, respectively. </p>
-
-        <p> He was an Electrical Engineer with Space Engineering, a power consultant company in Vietnam, from 2017 to 2020. Currently, he is Project Manager of Hitachi Energy Norway, and control Oil & Gas project, transformer station projects in Norway.
-            His research interests include dynamic power systems, cyber-physical energy and power systems, real-time control, and protection in smart grids </p>
-        <!-- Placeholder Image: Replace src with "images/home-hero.jpg" later -->
-        <img src="https://www.usn.no/getfile.php/13902114-1751269043/usn.no/forskning/Doktorgradsutdanning/Disputaser/Le%20Nam%20Hai%20Pham.jpeg%20%28article%29.webp" alt="Website Banner" class="personal-hero-img">
+    <div class="main-layout-container">
         
-        <h3>Key Features</h3>
-        <div class="features-list">
-            <div class="feature-content">
-                <h4>2026-05: Registered CIGRE conference 2026 in Paris. Will see you in Paris 😊 </h4>
-                <p> Research paper: Applying Deep Neutral Network for Fault Detection in Modern Systems</p>
-                <!-- Your new image tag goes right here -->
-                <img src="images/cigre.png" alt="CIGRE Paris Conference Banner" class="feature-image" style="max-width: 100%; height: auto;">
+        <!-- LEFT SIDE: Contact and Quick Info Panel -->
+        <aside class="left-contact-panel">
+            <img src="https://www.usn.no/getfile.php/13902114-1751269043/usn.no/forskning/Doktorgradsutdanning/Disputaser/Le%20Nam%20Hai%20Pham.jpeg%20%28article%29.webp" alt="Dr. Le Nam Hai Pham" class="panel-profile-img">
+            
+            <h3>Dr. Le Nam Hai Pham</h3>
+            <p class="panel-title">Project Manager</p>
+            <p class="panel-sub-title">Hitachi Energy Norway</p>
+            
+            <hr class="panel-divider">
+            
+            <div class="contact-links">
+                <p><i class="fa-solid fa-location-dot"></i> <span>Norway</span></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:le.pham@example.com">le.pham@example.com</a></p>
+                <p><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></p>
+                <p><i class="fa-solid fa-graduation-cap"></i> <a href="https://www.usn.no" target="_blank">USN Academic Profile</a></p>
             </div>
-            <div class="feature-content">
-                <h4>2026-04: Participated USN doctor ceremony. Represent 47 new doctors to deliver speech 😊 </h4>
-                <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/684884539_26914796848208696_6654648094538955667_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=xuB1UGbVZMIQ7kNvwEZ6zEd&_nc_oc=Adq1RR_E21qqOV_DUR8SeHKNlte4NaEttdZmygPiwPfTh_ewivpOngl-5ORusrHnlt4&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_gid=NLsVqJoisBpve836MlP-ag&_nc_ss=782a8&oh=00_Af4tRrqn4_lcplp9IOwcbBJlK-B0vEAa6kj44GFxf7cSew&oe=6A0DF367" alt="PhD ceremony" class="feature-image" style="max-width: 50%; height: auto;">   
-                <a href="https://www.usn.no/nyhetsarkiv/hyller-47-nye-doktorander" target="_blank" class="news-link-btn"> 
-                    <i class="fa-solid fa-newspaper"></i> Read USN News Article
-                </a>
+        </aside>
+
+        <!-- RIGHT SIDE: Biography and Detailed Milestones -->
+        <main class="right-content-area">
+            <h2>Welcome to My Page</h2>
+            <p>This is the website of Dr. Le Nam Hai Pham.</p>
+
+            <h2>About Le Nam Hai Pham</h2>
+            <p>Le Nam Hai Pham received the bachelor’s degree in electrical engineering from the University of Technology, Ho Chi Minh City, Vietnam (Dai Hoc Bach Khoa HCM), and the M.Sc. and Ph.D degree in electrical power engineering from the University of South-Eastern Norway, in 2022 and 2025, respectively.</p>
+
+            <p>He was an Electrical Engineer with Space Engineering, a power consultant company in Vietnam, from 2017 to 2020. Currently, he is a Project Manager at Hitachi Energy Norway, handling critical Oil & Gas projects as well as advanced transformer substation deployment projects across Norway.</p>
+            
+            <p>His core research interests encompass dynamic power systems, cyber-physical energy and power systems, real-time control applications, and protection infrastructure in smart grids.</p>
+            
+            <h3>Key Features & Milestones</h3>
+            <div class="features-list">
+                
+                <!-- CIGRE Conference Item -->
+                <div class="feature-content">
+                    <h4>2026-05: Registered CIGRE conference 2026 in Paris. Will see you in Paris 😊</h4>
+                    <p>Research paper: Applying Deep Neural Network for Fault Detection in Modern Systems</p>
+                    <img src="images/cigre.png" alt="CIGRE Paris Conference Banner" class="feature-image" style="max-width: 100%;">
+                </div>
+                
+                <!-- Doctoral Ceremony Item -->
+                <div class="feature-content">
+                    <h4>2026-04: Participated USN doctoral ceremony. Represented 47 new doctors to deliver valedictorian speech 😊</h4>
+                    <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/684884539_26914796848208696_6654648094538955667_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=xuB1UGbVZMIQ7kNvwEZ6zEd&_nc_oc=Adq1RR_E21qqOV_DUR8SeHKNlte4NaEttdZmygPiwPfTh_ewivpOngl-5ORusrHnlt4&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_gid=NLsVqJoisBpve836MlP-ag&_nc_ss=782a8&oh=00_Af4tRrqn4_lcplp9IOwcbBJlK-B0vEAa6kj44GFxf7cSew&oe=6A0DF367" alt="PhD ceremony" class="feature-image" style="max-width: 50%;">   
+                    <a href="https://www.usn.no/nyhetsarkiv/hyller-47-nye-doktorander" target="_blank" class="news-link-btn"> 
+                        <i class="fa-solid fa-newspaper"></i> Read USN News Article
+                    </a>
+                </div>
+                
+                <!-- PhD Public Defense Item -->
+                <div class="feature-content">
+                    <h4>🛠 2025-09: PhD Public Defense</h4>
+                    <p>Successfully defended my PhD dissertation at USN. PhD title: Cyber-Physical Convergent ICT for Control and Protection Functionalities in Energy Systems</p>
+                    <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/546828272_24611462885208782_6511116183439367_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=2UwOp_4XHRAQ7kNvwHjutHs&_nc_oc=Adox27T8Z7ARhwz-mmUzycfvNjDvK-is7CyEgFhhcB2H0cawwHTiuDFj_u7klyT3ioI&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_gid=-mjCOEE6ctMd5cK6S0a1lA&_nc_ss=782a8&oh=00_Af7b8zbme3FDsdPXnAdO_JCuNEPmeJ9fiapSxIoDGYK1Dg&oe=6A0E0DF7" alt="PhD defense" class="feature-image" style="max-width: 30%;">   
+                </div>
+                
+                <!-- Hitachi Energy Position Entry -->
+                <div class="feature-content">
+                    <h4>🛠 2025-03: Start new position as Project Manager at Hitachi Energy Norway</h4>
+                    <p>Managing execution of grid transmission systems, substation engineering, and automation solutions supporting Norway's shifting energy infrastructure.</p>
+                </div>
+                
             </div>
-            <div class="feature-content">
-                <h4>🛠 2025-09: PhD Public Defense</h4>
-                <p>Defense my PhD at USN. PhD title: Cyber-Physical Convergent ICT for Control and Protection Functionalities in Energy Systems</p>
-                <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/546828272_24611462885208782_6511116183439367_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=2UwOp_4XHRAQ7kNvwHjutHs&_nc_oc=Adox27T8Z7ARhwz-mmUzycfvNjDvK-is7CyEgFhhcB2H0cawwHTiuDFj_u7klyT3ioI&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_gid=-mjCOEE6ctMd5cK6S0a1lA&_nc_ss=782a8&oh=00_Af7b8zbme3FDsdPXnAdO_JCuNEPmeJ9fiapSxIoDGYK1Dg&oe=6A0E0DF7" alt="PhD defense" class="feature-image" style="max-width: 30%; height: auto;">   
-            </div>
-            <div class="feature-content">
-                <h4>🛠 2025-03: Start new position as Associate Project Manager at Hitachi Energy Norway </h4>
-      
-            </div>
-        </div>
+        </main>
+        
     </div>
 
     <footer>
