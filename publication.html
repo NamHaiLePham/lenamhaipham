@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Dr. Le Nam Hai Pham</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Shared Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f6f9;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { margin: 0; font-size: 1.5rem; }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 500;
+        }
+        nav a:hover, nav a.active {
+            color: #1abc9c;
+            text-decoration: underline;
+        }
+
+        /* Layout Layout Wrapper */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Quick Citation Metrics Bar */
+        .metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+        .metric-card {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            text-align: center;
+            border-top: 3px solid #1abc9c;
+        }
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 5px 0 0 0;
+        }
+        .metric-label {
+            font-size: 0.85rem;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        /* Publication Card Entries */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .pub-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid #2c3e50;
+            transition: transform 0.2s ease;
+        }
+        .pub-card:hover {
+            transform: translateX(4px);
+        }
+        .pub-year-badge {
+            background-color: #e7f1ff;
+            color: #0056b3;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .pub-title {
+            margin: 0 0 8px 0;
+            font-size: 1.15rem;
+            color: #2c3e50;
+        }
+        .pub-title a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        .pub-title a:hover {
+            color: #1abc9c;
+        }
+        .pub-authors {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0 0 6px 0;
+        }
+        .author-self {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .pub-venue {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #666;
+            margin: 0 0 12px 0;
+        }
+        
+        /* Action Links for Papers */
+        .pub-links {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+        .pub-btn {
+            color: #0056b3;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 500;
+        }
+        .pub-btn:hover {
+            text-decoration: underline;
+            color: #1abc9c;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 6rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dr. Le Pham's Personal Page</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="publications.html" class="active">Publications</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Research & Publications</h2>
+
+        <!-- Scholar Metrics Dashboard Overview -->
+        <div class="metrics-bar">
+            <div class="metric-card">
+                <div class="metric-label">Citations</div>
+                <div class="metric-value">142+</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">h-index</div>
+                <div class="metric-value">7</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">i10-index</div>
+                <div class="metric-value">7</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">External Profiles</div>
+                <div class="metric-value" style="font-size: 1rem; margin-top: 10px;">
+                    <a href="https://scholar.google.com/citations?user=IKJNAUUAAAAJ" target="_blank" style="color: #0056b3; text-decoration: none;"><i class="fa-brands fa-google-scholar"></i> Scholar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section of Selected Peer-Reviewed Material -->
+        <div class="pub-list">
+
+            <!-- Paper Entry -->
+            <div class="pub-card">
+                <span class="pub-year-badge">2025</span>
+                <h3 class="pub-title"><a href="#" target="_blank">Exploring Data-Driven Technique in Optimal Power Flow Study through Real-Time Cyber-Physical Power System under Uncertainties</a></h3>
+                <p class="pub-authors"><span class="author-self">L. N. H. Pham</span>, J. M. Riquelme-Dominguez, and F. Gonzalez-Longatt</p>
+                <p class="pub-venue">Energy, Volume 2025, 137091</p>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1016/j.energy.2025.137091" target="_blank" class="pub-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Publisher DOI</a>
+                </div>
+            </div>
+
+            <!-- Paper Entry -->
+            <div class="pub-card">
+                <span class="pub-year-badge">2025</span>
+                <h3 class="pub-title"><a href="#" target="_blank">Digital Twins and Cyber–Physical Systems Toward the Digitalization of Power and Energy Systems</a></h3>
+                <p class="pub-authors"><span class="author-self">L. N. H. Pham</span>, A. Shrestha, C. Sharma, and F. Gonzalez-Longatt</p>
+                <p class="pub-venue">IEEE Transactions on Technology and Society, 2025</p>
+                <div class="pub-links">
+                    <a href="#" target="_blank" class="pub-btn"><i class="fa-solid fa-link"></i> IEEE Xplore</a>
+                </div>
+            </div>
+
+            <!-- Paper Entry -->
+            <div class="pub-card">
+                <span class="pub-year-badge">2025</span>
+                <h3 class="pub-title"><a href="#" target="_blank">Exploring Multiple Functionalities of Cyber-Physical Power System within Digital Substation-based Laboratory Environment</a></h3>
+                <p class="pub-authors"><span class="author-self">L. N. H. Pham</span>, J. M. Riquelme-Dominguez, and F. Gonzalez-Longatt</p>
+                <p class="pub-venue">IEEE Access, 2025</p>
+                <div class="pub-links">
+                    <a href="#" target="_blank" class="pub-btn"><i class="fa-solid fa-link"></i> IEEE Access</a>
+                </div>
+            </div>
+
+            <!-- Paper Entry -->
+            <div class="pub-card">
+                <span class="pub-year-badge">2024</span>
+                <h3 class="pub-title"><a href="#" target="_blank">Real-time cyber-physical power system testbed for optimal power flow study using co-simulation framework</a></h3>
+                <p class="pub-authors"><span class="author-self">L. N. H. Pham</span>, R. Wagle, G. Tricarico, A. F. S. Melo, V. Rosero-Morillo, A. Shukla, and F. Gonzalez-Longatt</p>
+                <p class="pub-venue">IEEE Access, Volume 12, pp. 2391-2405, 2024</p>
+                <div class="pub-links">
+                    <a href="#" target="_blank" class="pub-btn"><i class="fa-solid fa-link"></i> Open Access Article</a>
+                </div>
+            </div>
+
+            <!-- Paper Entry -->
+            <div class="pub-card">
+                <span class="pub-year-badge">2024</span>
+                <h3 class="pub-title"><a href="#" target="_blank">Intelligent Electronic Device-in-the-Loop: A Real-Time Simulation as Modern Educational Aid</a></h3>
+                <p class="pub-authors">F. Gonzalez-Longatt and <span class="author-self">L. N. H. Pham</span></p>
+                <p class="pub-venue">IEEE Access, 2024</p>
+                <div class="pub-links">
+                    <a href="#" target="_blank" class="pub-btn"><i class="fa-solid fa-link"></i> Publisher Link</a>
+                </div>
+            </div>
+
+            <!-- Paper Entry -->
+            <div class="pub-card">
+                <span class="pub-year-badge">2023</span>
+                <h3 class="pub-title"><a href="#" target="_blank">Concise definition of the overcurrent protection system for CIGRE European medium voltage benchmark network</a></h3>
+                <p class="pub-authors"><span class="author-self">L. N. H. Pham</span>, R. Wagle, and F. Gonzalez-Longatt</p>
+                <p class="pub-venue">2023 IEEE PES Conference on Innovative Smart Grid Technologies-Middle East (ISGT-ME), 2023</p>
+                <div class="pub-links">
+                    <a href="#" target="_blank" class="pub-btn"><i class="fa-solid fa-scroll"></i> Conference Paper</a>
+                </div>
+            </div>
+
+            <!-- Paper Entry -->
+            <div class="pub-card">
+                <span class="pub-year-badge">2022</span>
+                <h3 class="pub-title"><a href="#" target="_blank">Exploring cyber-physical energy and power system: Concepts, applications, challenges, and simulation approaches</a></h3>
+                <p class="pub-authors"><span class="author-self">L. N. H. Pham</span></p>
+                <p class="pub-venue">Energies, Volume 16, Issue 1, 42, 2022</p>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.3390/en16010042" target="_blank" class="pub-btn"><i class="fa-solid fa-newspaper"></i> Read Open Access</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Dr. Le Nam Hai Pham's website. Knowledge has no limitation.</p>
+    </footer>
+
+</body>
+</html>
